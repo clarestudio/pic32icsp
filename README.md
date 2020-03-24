@@ -34,7 +34,7 @@ The factory default fuse value (8MHz internal clock) is sufficient as of my expe
 ## How to build binary
 
 To obtain the firmware binary image, you need gmake, avr-binutils, avr-gcc, and avr-libc.
-Just type make all.
+Adjust Makefiles and run (g)make.
 
 The versions of the controller and userland program should be matched.
 This is experimental project,
