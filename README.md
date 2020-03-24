@@ -3,8 +3,7 @@
 Program PIC32MX via 2-wire ICSP protocol.
 This program uses a ATtiny2313 for ICSP adapter.
 
-![photo1]
-[photo1]: https://www.clarestudio.org/elec/pic32/pic32prog-hw.jpg
+![photo1](https://www.clarestudio.org/elec/pic32/pic32prog-hw.jpg "hardware photo")
 
 # hardware
 
