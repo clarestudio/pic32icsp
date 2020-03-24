@@ -4,19 +4,19 @@ A very tiny, low-cost tool to program the PIC32MX2 series MCUs via 2-wire ICSP p
 
 ![photo1](https://www.clarestudio.org/elec/pic32/pic32prog-hw.jpg "hardware photo")
 
-# Target OS
+## Target OS
 
 * NetBSD/amd64
 * Fedora 31 (compilation passed, but not yet tested)
 
-# Target MCU
+## Target MCU
 
 * PIC32MX210
 * PIC32MX220
 * PIC32MX230
 * PIC32MX250
 
-# Hardware
+## Hardware
 
 You need a ATtiny2313.
 A FT232 USB-UART module and avrdude serial-bitbang method is sufficient to program the AVR.
@@ -31,7 +31,7 @@ A FT232 USB-UART module and avrdude serial-bitbang method is sufficient to progr
 
 The factory default fuse value (8MHz internal clock) is sufficient as of my experience.
 
-# How to build binary
+## How to build binary
 
 To obtain the firmware binary image, you need gmake, avr-binutils, avr-gcc, and avr-libc.
 Just type make all.
@@ -40,6 +40,6 @@ The versions of the controller and userland program should be matched.
 This is experimental project,
 there is no compatibility plan between versions.
 
-# How to use
+## How to use
 
 ./pic32icsp -d /dev/ttyUSB01 -w target.hex
