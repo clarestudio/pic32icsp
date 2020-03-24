@@ -16,10 +16,10 @@
 void
 usage(void)
 {
-    printf("This is pic32prog version 0.3\n");
+    printf("This is pic32icsp version 0.3\n");
     printf("The ICSP programmer for the Microchip PIC32MX[12]xx devices.\n");
-    printf("Copyright (C) 2016 clare.  All rights reserved.\n");
-    printf("See http://www.clarestudio.org/elec/pic32 for details.\n");
+    printf("Copyright (C) 2016, 2020 clare.  All rights reserved.\n");
+    printf("See https://www.clarestudio.org/elec/pic32 for details.\n");
     printf("\n");
     printf("pic32prog -d <tty-device> [options]\n");
     printf("    -b baud     ... set communication speed\n");
