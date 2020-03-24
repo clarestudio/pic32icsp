@@ -2,7 +2,7 @@
 
 PIC32MX2 programming software via 2-wire ICSP protocol
 
-example hardware image
+example hardware image  
 ![photo1]
 
 # hardware
