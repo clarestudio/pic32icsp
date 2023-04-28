@@ -8,9 +8,9 @@ CFLAGS=-Os -mmcu=${MCU} -Wall -DF_CPU=8000000L
 SRCS=main.c
 OBJS=${SRCS:%.c=%.o}
 
-#TOOLDIR=/usr/cross
+TOOLDIR=/usr/cross
 # for Fedora 31 with avr-gcc package
-TOOLDIR=/usr
+#TOOLDIR=/usr
 
 CC=${TOOLDIR}/bin/avr-gcc
 OBJDUMP=${TOOLDIR}/bin/avr-objdump
@@ -36,9 +36,9 @@ all: ${PROG}.elf ${PROG}.hex
 
 ${PROG}.elf: ${OBJS}
 	${CC} ${CFLAGS} -o $@ ${OBJS}
-	${OBJDUMP} -d $@ > ${PROG}.dump
+	LANG=C ${OBJDUMP} -d $@ > ${PROG}.dump
 	@echo >> ${PROG}.dump
-	${SIZE} $@ >> ${PROG}.dump
+	LANG=C ${SIZE} $@ >> ${PROG}.dump
 
 ${PROG}.hex: ${PROG}.elf
 	${OBJCOPY} -I elf32-avr -O ihex ${PROG}.elf ${PROG}.hex
