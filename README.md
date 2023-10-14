@@ -35,8 +35,8 @@ You need a ATtiny2313 as a device programmer.
 AVR-ISP pins (a.k.a. SPI-bus pins) are reserved and not connected/used as a device programmer.
 The fuse bits I used is the factory default.
 
-If you caught a communication stability problems,
-you can attach quartz crystal device of 8MHz with adjusted fuse bits.
+If you caught communication stability problems,
+you can attach a quartz crystal device of 8MHz with adjusted fuse bits.
 
 ## How to build firmware
 
