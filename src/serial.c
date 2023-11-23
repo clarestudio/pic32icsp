@@ -33,7 +33,7 @@ int serial_open(void)
     int fd;
     int rv;
 
-    if (devfd > 0)
+    if (devfd >= 0)
         serial_close();
     if (devbaud == 0)
         devbaud = 38400; /* the default */
@@ -67,7 +67,7 @@ int serial_close(void)
     int fd;
 
     fd = devfd;
-    if (fd > 0)
+    if (fd >= 0)
     {
         serial_restore();
         close(fd);
