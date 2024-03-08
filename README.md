@@ -27,7 +27,7 @@ PIC32MX270 was planned, but not yet done.
 
 ## Bill of Materials
 
-* Atmel/Microchip ATtiny2313/2313A microcontroller
+* Atmel/Microchip ATtiny2313 microcontroller
 * 9.216MHz quartz crystal timing device
 * two 22pF ceramic capacitors for quartz crystal
 * some 0.1uF ceramic capacitors for bypassing of power rail
