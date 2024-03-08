@@ -36,7 +36,7 @@ int serial_open(void)
     if (devfd >= 0)
         serial_close();
     if (devbaud == 0)
-        devbaud = 38400; /* the default */
+        devbaud = 115200; /* the default */
 
     fd = open(devfn, O_RDWR);
     if (fd == -1)
