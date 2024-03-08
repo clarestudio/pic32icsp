@@ -3,7 +3,7 @@
 
 MCU?=attiny2313
 PROG=pic32icsp-${MCU}
-CFLAGS=-Os -mmcu=${MCU} -Wall -DF_CPU=8000000L
+CFLAGS=-Os -mmcu=${MCU} -Wall -DF_CPU=9216000L
 
 SRCS=main.c
 OBJS=${SRCS:%.c=%.o}
@@ -48,5 +48,11 @@ clean:
 
 write:
 	${AVRDUDE} -P /dev/dtyU0 -c ft232serbb -p ${MCU} -U flash:w:${PROG}.hex
+
+fuse-attiny2313:
+	${AVRDUDE} -P /dev/dtyU0 -c ft232serbb -p ${MCU} \
+		-U efuse:w:0xFF:m \
+		-U hfuse:w:0xDF:m \
+		-U lfuse:w:0x6F:m \
 
 main.o: main.c tty.c pin.c icsp.c cmddef.h tapdef.h

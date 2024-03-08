@@ -5,8 +5,8 @@ tty_init()
 {
     uint16_t  rate;
 
-    /* speed is 38400bps */
-    rate = (F_CPU/38400/16) - 1;
+    /* speed is 115200bps */
+    rate = (F_CPU/115200/16) - 1;
     UBRRH = rate >> 8;
     UBRRL = rate;
     /*
