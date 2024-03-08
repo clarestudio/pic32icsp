@@ -65,7 +65,7 @@ Suggested fuse bits for ATtiny2313:
 To obtain the host program binary, you need gmake and gcc.
 Adjust Makefiles and run (g)make.
 
-The versions of the controller and host program should be matched.
+The versions of the controller and host programs should be matched.
 
 ## How to use
 
