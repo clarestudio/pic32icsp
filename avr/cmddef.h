@@ -34,6 +34,7 @@
 #define		CMD_SET_ADDR		46
 #define		CMD_READ_DWORD		47
 #define		CMD_WRITE_DWORD		48
+#define		CMD_REWIND		49
 
 #define		STATUS_ACK	0x06
 #define		STATUS_NAK	0x15

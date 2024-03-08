@@ -211,3 +211,15 @@ void cmd_write_dword(uint32_t data)
     if (rv != STATUS_ACK)
         printf("error: cmd_write_dword failed: got %02X\n", rv);
 }
+
+void cmd_rewind(void)
+{
+    uint8_t cbuf[1];
+    uint8_t rv;
+
+    cbuf[0] = CMD_REWIND;
+    serial_putmem(cbuf, sizeof(cbuf));
+    rv = serial_getc();
+    if (rv != STATUS_ACK)
+        printf("error: cmd_rewind failed: got %02X\n", rv);
+}

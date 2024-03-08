@@ -3,15 +3,12 @@
 uint32_t addrreg;
 
 /*
- * delay approx 8 clocks of 8MHz
+ * dummy delay
  */
 static void
 icsp_delay_bit()
 {
-    uint8_t i;
-
-    for (i=0; i<4; i++)
-        __asm__("nop");
+    __asm__("nop");
 }
 
 static void
@@ -268,6 +265,34 @@ static void
 icsp_set_addr(uint32_t addr)
 {
     addrreg = addr;
+}
+
+static void
+icsp_rewind(void)
+{
+    uint32_t insn;
+
+    /*
+     * lui t0, DMSEG
+     * ori t0, 0x0200
+     */
+    insn = 0x3C080000;
+    insn |= 0xFF20; /* DMSEG */
+    icsp_xfer_insn(insn);
+    insn = 0x35080000;
+    insn |= 0x0200;
+    icsp_xfer_insn(insn);
+
+    /*
+     * jr t0
+     * nop
+     */
+    insn = 0x01000008;
+    icsp_xfer_insn(insn);
+    insn = 0x00000000;
+    icsp_xfer_insn(insn);
+
+    return;
 }
 
 static uint32_t

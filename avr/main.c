@@ -216,6 +216,12 @@ main()
 	    }
 	    break;
 
+	case CMD_REWIND:
+	    {
+		icsp_rewind();
+		tty_putc(STATUS_ACK);
+	    }
+
         case CMD_READ_DWORD:
 	    {
 		uint8_t r0, r1, r2, r3;
