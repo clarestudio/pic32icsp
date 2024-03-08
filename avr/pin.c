@@ -4,8 +4,8 @@
  * 01	RESET#		tied to ISP
  * 02	RxD		tied to UART
  * 03	TxD		tied to UART
- * 04	XTAL2		tied to 8MHz quarts
- * 05	XTAL1		tied to 8MHz quarts
+ * 04	XTAL2		tied to 9.216MHz quartz
+ * 05	XTAL1		tied to 9.216MHz quartz
  * 06	INT0		-
  * 07	INT1		-
  * 08	PD4		-
