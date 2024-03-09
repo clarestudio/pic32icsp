@@ -11,6 +11,8 @@ You can program the microcontroller from the NetBSD, other than Linux and/or Win
 This is still in an experimental project,
 there is no compatibility plan(s) between versions.
 
+Since the software was written first, the head version has not been verified.
+
 ## Target Host OS
 
 * NetBSD/amd64 and/or other little endian, 64bit architecture
