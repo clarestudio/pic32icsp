@@ -17,3 +17,4 @@ int icsp_enter_serial_exec(void);
 void icsp_write_mem(uint32_t, uint8_t const *, size_t);
 void icsp_read_mem(uint32_t, uint8_t *, size_t);
 int icsp_flash_row(uint32_t addr, uint32_t srcaddr);
+void icsp_rewind(void);

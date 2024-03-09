@@ -95,6 +95,11 @@ void icsp_xfer_insn(uint32_t insn)
     cmd_xfer_insn(insn);
 }
 
+void icsp_rewind(void)
+{
+    cmd_rewind();
+}
+
 uint32_t icsp_read_dword(uint32_t addr)
 {
     uint32_t data;

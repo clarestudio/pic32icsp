@@ -26,6 +26,7 @@ writer_flash(pgbuf_t *pg)
     fflush(stdout);
     icsp_flash_row(romaddr, ramaddr);
     usleep(1000);
+    icsp_rewind();
     return 0;
 }
 
@@ -40,6 +41,7 @@ writer_verify(pgbuf_t *pg)
     addr = pg->pg_addr | 0xA0000000;
     icsp_read_mem(addr, buf, currowsz);
     e = memcmp(buf, pg->pg_buf, currowsz);
+    icsp_rewind();
     return e;
 }
 

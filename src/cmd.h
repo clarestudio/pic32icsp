@@ -28,3 +28,4 @@ int cmd_xfer_insn(uint32_t data);
 void cmd_set_addr(uint32_t data);
 uint32_t cmd_read_dword(void);
 void cmd_write_dword(uint32_t data);
+void cmd_rewind(void);
