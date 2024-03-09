@@ -1,6 +1,6 @@
 /* $Id: tty.c,v 1.4 2016/05/08 16:11:19 clare Exp $ */
 
-static __inline__ void
+static inline __attribute__((always_inline)) void
 tty_init()
 {
     uint16_t  rate;
@@ -21,7 +21,7 @@ tty_init()
     UCSRB = _BV(RXEN)|_BV(TXEN);
 }
 
-static __inline__ uint8_t
+static uint8_t
 tty_getc()
 {
     while ((UCSRA & _BV(RXC)) == 0)
@@ -29,7 +29,7 @@ tty_getc()
     return UDR;
 }
 
-static __inline__ void
+static void
 tty_putc(uint8_t data)
 {
     while ((UCSRA & _BV(UDRE)) == 0)
