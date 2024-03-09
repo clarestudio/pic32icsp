@@ -28,81 +28,81 @@
 #define		P_CLOCK		PB1
 #define		P_DATA		PB0
 
-static uint8_t
+static inline __attribute__((always_inline)) uint8_t
 pin_read()
 {
     return PINB;
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_reset_high()
 {
     PORTB |= 1<<P_RESET;
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_reset_low()
 {
     PORTB &= ~(1<<P_RESET);
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_reset_output()
 {
     DDRB |= 1<<P_RESET;
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_reset_input()
 {
     DDRB &= ~(1<<P_RESET);
     PORTB &= ~(1<<P_RESET); /* release pull-up */
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_clock_high()
 {
     PORTB |= 1<<P_CLOCK;
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_clock_low()
 {
     PORTB &= ~(1<<P_CLOCK);
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_clock_output()
 {
     DDRB |= 1<<P_CLOCK;
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_clock_input()
 {
     DDRB &= ~(1<<P_CLOCK);
     PORTB &= ~(1<<P_CLOCK); /* release pull-up */
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_data_high()
 {
     PORTB |= 1<<P_DATA;
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_data_low()
 {
     PORTB &= ~(1<<P_DATA);
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_data_output()
 {
     DDRB |= 1<<P_DATA;
 }
 
-static void
+static inline __attribute__((always_inline)) void
 pin_data_input()
 {
     DDRB &= ~(1<<P_DATA);
