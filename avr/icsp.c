@@ -5,7 +5,7 @@ uint32_t addrreg;
 /*
  * dummy delay
  */
-static void
+static __attribute__((noinline)) void
 icsp_delay_bit()
 {
     __asm__("nop");
