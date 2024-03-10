@@ -3,15 +3,10 @@
 This is a very tiny, low-cost tool to program flash memory of
 the Microchip PIC32MX2xx series MCUs via 2-wire ICSP protocol.
 
-You can eliminate buying PICkit or similar costly vendor tools for PIC32MX210/220/230/250.
-You can program the microcontroller from the NetBSD, other than Linux and/or Windows.
-
 ## Status
 
 This is still in an experimental project,
 there is no compatibility plan(s) between versions.
-
-Since the software was written first, the head version has not been verified.
 
 ## Target Host OS
 
@@ -32,7 +27,7 @@ PIC32MX270 was planned, but not yet done.
 * Atmel/Microchip ATtiny2313 microcontroller
 * 9.216MHz quartz crystal timing device
 * two 22pF ceramic capacitors for quartz crystal
-* some 0.1uF ceramic capacitors for bypassing of power rail
+* some 0.1uF ceramic capacitors to bypassing of power rail
 * 3.3V LDO voltage regulator device and reasonable bypass capacitors
 * 3.3V I/O compatible USB-UART module
 * your favorite connectors and wires
@@ -41,20 +36,22 @@ PIC32MX270 was planned, but not yet done.
 
 ## Hardware wirings
 
+ATtiny2313 connections:
+
 * pin 20 (Vcc) -- 3.3V power supply
 * pin 10 (GND) -- common ground
 * pin 2 (RxD) -- upstream serial port (connect to the USB UART module)
 * pin 3 (TxD) -- upstream serial port (connect to the USB UART module)
 * pin 4 (XTAL2) -- connect quartz crystal and a load capacitor (may be 22pF)
 * pin 5 (XTAL1) -- connect quartz crystal and a load capacitor (may be 22pF)
-* pin 14 (PB2) -- MCLR# of the target PIC32MX
-* pin 13 (PB1) -- PGEC of the target PIC32MX
-* pin 12 (PB0) -- PGED of the target PIC32MX
+* pin 14 (PB2) -- connect to MCLR# of the target PIC32MX
+* pin 13 (PB1) -- connect to PGEC of the target PIC32MX
+* pin 12 (PB0) -- connect to PGED of the target PIC32MX
 
 ## How to build firmware
 
 To obtain the firmware binary image,
-you need gmake, avr-binutils, avr-gcc, and avr-libc.
+you need gmake, avr-binutils, avr-gcc, avr-libc, and avrdude.
 Adjust Makefiles and run (g)make.
 
 Suggested fuse bits for ATtiny2313:
