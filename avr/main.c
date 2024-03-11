@@ -1,4 +1,3 @@
-/* $Id: main.c,v 1.17 2016/05/22 08:15:42 clare Exp $ */
 /*
  * PIC32 ICSP bridge device
  */

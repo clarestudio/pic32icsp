@@ -1,4 +1,3 @@
-# $Id: Makefile,v 1.8 2016/05/21 10:27:28 clare Exp $
 # Makefile
 
 MCU?=attiny2313

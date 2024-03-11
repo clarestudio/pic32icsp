@@ -1,5 +1,3 @@
-/* $Id: icsp.c,v 1.16 2016/05/22 08:13:34 clare Exp $ */
-
 uint32_t addrreg;
 
 /*

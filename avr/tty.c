@@ -1,5 +1,3 @@
-/* $Id: tty.c,v 1.4 2016/05/08 16:11:19 clare Exp $ */
-
 static inline __attribute__((always_inline)) void
 tty_init()
 {

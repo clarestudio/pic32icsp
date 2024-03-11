@@ -1,4 +1,3 @@
-/* $Id: pin.c,v 1.7 2016/05/21 13:20:59 clare Exp $ */
 /*
  * pin-layout of ATtiny2313
  * 01	RESET#		tied to ISP

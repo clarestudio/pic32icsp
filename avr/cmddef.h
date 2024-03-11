@@ -1,4 +1,3 @@
-/* $Id: cmddef.h,v 1.7 2016/05/22 12:22:04 clare Exp $ */
 /*
  * basic commands
  */
