@@ -1,5 +1,3 @@
-/* $Id: icsp.h,v 1.13 2016/05/22 09:00:34 clare Exp $ */
-
 void icsp_tap_idle();
 void icsp_command(uint8_t);
 uint8_t icsp_xfer_byte(uint8_t);

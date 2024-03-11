@@ -1,4 +1,3 @@
-/* $Id: tapdef.h,v 1.2 2016/05/15 16:05:28 clare Exp $ */
 /*
  * MTAP instruction register has 5bit width
  */

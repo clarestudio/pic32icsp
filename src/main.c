@@ -1,5 +1,3 @@
-/* $Id: main.c,v 1.23 2017/03/26 11:53:59 clare Exp $ */
-
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>

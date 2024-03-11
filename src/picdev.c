@@ -1,5 +1,3 @@
-/* $Id: picdev.c,v 1.5 2016/05/21 17:30:26 clare Exp $ */
-
 #include <inttypes.h>
 #include "picdev.h"
 

@@ -1,5 +1,3 @@
-/* $Id: pgbuf.h,v 1.3 2016/05/19 06:26:35 clare Exp $ */
-
 typedef struct pgbuf pgbuf_t;
 
 struct pgbuf

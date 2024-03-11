@@ -1,4 +1,3 @@
-/* $Id: cmd.h,v 1.5 2016/05/22 08:31:33 clare Exp $ */
 int cmd_nop(void);
 int cmd_version(void);
 int cmd_read(void);

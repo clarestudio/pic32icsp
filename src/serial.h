@@ -1,4 +1,3 @@
-/* $Id: serial.h,v 1.7 2016/05/21 12:56:22 clare Exp $ */
 void serial_set_fname(char const *);
 void serial_baud(int);
 int serial_open();
