@@ -24,15 +24,17 @@ PIC32MX270 was planned, but not yet done.
 
 ## Bill of Materials
 
-* Atmel/Microchip ATtiny2313 microcontroller
-* 9.216MHz quartz crystal timing device
-* two 22pF ceramic capacitors for quartz crystal
-* some 0.1uF ceramic capacitors to bypassing of power rail
-* 3.3V LDO voltage regulator device and reasonable bypass capacitors
-* 3.3V I/O compatible USB-UART module
-* your favorite connectors and wires
-* your favorite universal board
-* your favorite PIC32MX2xx device as a target
+* Atmel/Microchip ATtiny2313 microcontroller.
+I think you can use attiny2313a or attiny4313 instead of attiny2313.
+I used attiny2313 simply because it was in stock.
+* 9.216MHz quartz crystal timing device.
+* two 22pF ceramic capacitors for quartz crystal.
+* some 0.1uF ceramic capacitors to bypassing of power rail.
+* 3.3V LDO voltage regulator device and reasonable bypass capacitors.
+* 3.3V I/O compatible USB-UART module.
+* your favorite connectors and wires.
+* your favorite universal board.
+* your favorite PIC32MX2xx device as a target.
 
 ## Hardware wirings
 
