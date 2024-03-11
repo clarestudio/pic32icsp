@@ -1,4 +1,2 @@
-.o
-.elf
-.hex
-.dump
+*.o
+*.elf
