@@ -1,5 +1,8 @@
-This file is a pre-built firmware.
+# Precompiled firmware binaries
 
-device: ATtiny2313
-fuse: FF-DF-6F (quartz crystal clock, 9.216MHz)
-serial-baud: 115200bps
+## for ATtiny2313, 115200bps
+
+* device: ATtiny2313 (not A-version)
+* fuse: FF-DF-6F
+* clock: quartz crystal, 9.216MHz
+* serial: 115200bps
