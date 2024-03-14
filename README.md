@@ -53,7 +53,9 @@ ATtiny2313 connections:
 ## How to build firmware
 
 To obtain the firmware binary image,
-you need gmake, avr-binutils, avr-gcc, avr-libc, and avrdude.
+you need gmake, avr-binutils, avr-gcc, avr-libc.
+To burn the firmware into your chip,
+you may need avrdude.
 Adjust Makefiles and run (g)make.
 
 Suggested fuse bits for ATtiny2313:
