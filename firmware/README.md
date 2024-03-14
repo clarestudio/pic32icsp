@@ -6,3 +6,8 @@
 * fuse: FF-DF-6F
 * clock: quartz crystal, 9.216MHz
 * serial: 115200bps
+
+## Notice
+
+* Since the binary code was compiled by avr-gcc and linked with avr-libc, so it may contain its fragment of the code (startup-code, et al).
+  please see https://github.com/avrdudes/avr-libc for details of avr-libc.
