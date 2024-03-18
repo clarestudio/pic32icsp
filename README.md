@@ -1,7 +1,7 @@
 # pic32icsp
 
 This is a very tiny, low-cost tool to program flash memory of
-the Microchip PIC32MX2xx series MCUs via 2-wire ICSP protocol.
+the Microchip PIC32MX2xx series MCUs via the 2-wire ICSP protocol.
 
 ## Status
 
@@ -25,13 +25,13 @@ PIC32MX270 was planned, but not yet done.
 ## Bill of Materials
 
 * Atmel/Microchip ATtiny2313 microcontroller.
-I think you can use attiny2313a or attiny4313 instead of attiny2313.
+I think you can use attiny2313a or attiny4313 instead of legacy attiny2313.
 I used attiny2313 simply because it was in stock.
-* 9.216MHz quartz crystal timing device.
+* one 9.216MHz quartz crystal timing device.
 * two 22pF ceramic capacitors for quartz crystal.
 * some 0.1uF ceramic capacitors to bypassing of power rail.
-* 3.3V LDO voltage regulator device and reasonable bypass capacitors.
-* 3.3V I/O compatible USB-UART module.
+* a 3.3V LDO voltage regulator device and reasonable bypass capacitors.
+* a 3.3V I/O compatible USB-UART module.
 * your favorite connectors and wires.
 * your favorite universal board.
 * your favorite PIC32MX2xx device as a target.
@@ -63,6 +63,8 @@ Suggested fuse bits for ATtiny2313:
 * hfuse = 0xDF
 * lfuse = 0x6F
 
+If you have no an AVR device programmer, an full featured USB-UART module and serial bitbang method is your friend, may be.
+
 ## How to build host program
 
 To obtain the host program binary, you need gmake and gcc.
@@ -75,3 +77,9 @@ The versions of the controller and host programs should be matched.
 To write a program file "target.hex" via host serial port "ttyUSB01":
 
 ./pic32icsp -d /dev/ttyUSB01 -w target.hex
+
+## To Do
+
+The communication protocol between the host and the bridge device is a proprietary one, I call it is a kind of remote procedure call.
+There is no checksums in the protocol, so the UART communication channel must be stable and trusted.
+A packetized and checksummed protocol feature is may be a better choice, but not yet planned nor implemented.
