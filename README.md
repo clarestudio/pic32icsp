@@ -63,7 +63,7 @@ Suggested fuse bits for ATtiny2313:
 * hfuse = 0xDF
 * lfuse = 0x6F
 
-If you have no an AVR device programmer, an full featured USB-UART module and serial bitbang method is your friend, may be.
+If you have no an AVR device programmer, a full featured USB-UART module and serial bitbang method is your friend, may be.
 
 ## How to build host program
 
