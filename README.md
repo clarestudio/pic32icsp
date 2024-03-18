@@ -33,7 +33,7 @@ I used attiny2313 simply because it was in stock.
 * a 3.3V LDO voltage regulator device and reasonable bypass capacitors.
 * a 3.3V I/O compatible USB-UART module.
 * your favorite connectors and wires.
-* your favorite universal board.
+* your favorite protoboard.
 * your favorite PIC32MX2xx device as a target.
 
 ## Hardware wirings
