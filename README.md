@@ -2,6 +2,7 @@
 
 This is a very tiny, low-cost tool to program flash memory of
 the Microchip PIC32MX2xx series MCUs via the 2-wire ICSP protocol.
+This experimental project uses the Atmel/Microchip AVR microcontrollers as a dongle.
 
 ## Status
 
@@ -32,8 +33,9 @@ I used attiny2313 simply because it was in stock.
 * some 0.1uF ceramic capacitors to bypassing of power rail.
 * a 3.3V LDO voltage regulator device and reasonable bypass capacitors.
 * a 3.3V I/O compatible USB-UART module.
+If you want to use WCH CH340G, don't forget additinal quartz and other components.
 * your favorite connectors and wires.
-* your favorite protoboard.
+* your favorite protoboard and/or breadboard.
 * your favorite PIC32MX2xx device as a target.
 
 ## Hardware wirings
@@ -63,7 +65,8 @@ Suggested fuse bits for ATtiny2313:
 * hfuse = 0xDF
 * lfuse = 0x6F
 
-If you have no an AVR device programmer, a full featured USB-UART module and serial bitbang method is your friend, may be.
+If you have no AVR device programmer dongle,
+a full featured USB-UART module and the serial bitbang method is your friend, may be.
 
 ## How to build host program
 
