@@ -2,7 +2,7 @@
 
 This is a very tiny, low-cost tool to program flash memory of
 the Microchip PIC32MX2xx series MCUs via the 2-wire ICSP protocol.
-This experimental project uses the Atmel/Microchip AVR microcontrollers as a dongle.
+This experimental project uses the Atmel/Microchip AVR microcontroller.
 
 ## Status
 
@@ -27,7 +27,6 @@ PIC32MX270 was planned, but not yet done.
 
 * Atmel/Microchip ATtiny2313 microcontroller.
 I think you can use attiny2313a or attiny4313 instead of legacy attiny2313.
-I used attiny2313 simply because it was in stock.
 * one 9.216MHz quartz crystal timing device.
 * two 22pF ceramic capacitors for quartz crystal.
 * some 0.1uF ceramic capacitors to bypassing of power rail.
