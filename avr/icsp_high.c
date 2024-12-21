@@ -1,141 +1,11 @@
-uint32_t addrreg;
-
 /*
- * dummy delay
+ * ICSP high level functions
  */
-static __attribute__((noinline)) void
-icsp_delay_bit()
-{
-    __asm__("nop");
-}
 
-static void
-icsp_send_msb(uint8_t byte)
-{
-    uint8_t i;
-
-    for (i=0; i<8; i++)
-    {
-        if (byte & 0x80)
-	{
-	    pin_data_high();
-	    icsp_delay_bit();
-	    pin_clock_high();
-	    icsp_delay_bit();
-	    pin_clock_low();
-	}
-	else
-	{
-	    pin_data_low();
-	    icsp_delay_bit();
-	    pin_clock_high();
-	    icsp_delay_bit();
-	    pin_clock_low();
-	}
-	byte <<= 1;
-    }
-}
-
-static void
-icsp_enter()
-{
-    pin_reset_low();
-    pin_reset_output();
-    pin_clock_low();
-    pin_clock_output();
-    pin_data_low();
-    pin_data_output();
-    pin_reset_high();
-    icsp_delay_bit();
-    pin_reset_low();
-    icsp_send_msb(0x4D);
-    icsp_send_msb(0x43);
-    icsp_send_msb(0x48);
-    icsp_send_msb(0x50);
-    pin_data_low();
-    pin_reset_high();
-}
-
-static void
-icsp_leave()
-{
-    pin_reset_low();
-    pin_reset_output();
-    icsp_delay_bit();
-    pin_clock_input();
-    pin_data_input();
-    pin_reset_high();
-    pin_reset_input();
-}
-
-uint8_t icsp_last_tdo;
-
-static uint8_t
-icsp_io(uint8_t cmd, uint8_t dat, uint8_t bc)
-{
-    uint8_t i;
-    uint8_t rv;
-
-    rv = icsp_last_tdo & 0x80;
-    for (i=0; i<bc; i++)
-    {
-        /*
-	 * TDI
-	 */
-        pin_clock_high();
-	if (dat & 1)
-	    pin_data_high();
-        else
-	    pin_data_low();
-        pin_data_output();
-	icsp_delay_bit(); /* setup */
-        pin_clock_low(); /* shift */
-	icsp_delay_bit(); /* hold */
-	dat >>= 1;
-
-        /*
-	 * TMS
-	 */
-        pin_clock_high();
-        if (cmd & 1)
-            pin_data_high();
-        else
-            pin_data_low();
-        icsp_delay_bit(); /* setup */
-        pin_clock_low(); /* shift */
-        icsp_delay_bit(); /* hold */
-	cmd >>= 1;
-	
-	/*
-	 * TDO
-	 */
-        pin_clock_high();
-	pin_data_input();
-	pin_clock_low(); /* gate on */
-	icsp_delay_bit();
-        pin_clock_high(); /* center */
-	if ((i+1) < bc)
-	{
-	    rv >>= 1;
-	    if (pin_read() & (1<<P_DATA))
-	        rv |= 0x80;
-	}
-	else
-	{
-	    if (pin_read() & (1<<P_DATA))
-	        icsp_last_tdo |= 0x80;
-            else
-	        icsp_last_tdo &= ~0x80;
-	}
-        pin_clock_low(); /* gate off */
-    }
-    for (i=0; i<8-bc; i++)
-        rv >>= 1;
-    return rv;
-}
+static uint32_t addrreg;
 
 /*
- * Send TAP state to idle
+ * Move TAP state to idle
  */
 static void
 icsp_tap_idle(void)
@@ -148,7 +18,7 @@ icsp_tap_idle(void)
 }
 
 /*
- * Send 5-bit MTAP/ETAP command
+ * Send to 5-bit MTAP/ETAP command register
  */
 static void
 icsp_tap_command(uint8_t bits)
@@ -263,34 +133,6 @@ static void
 icsp_set_addr(uint32_t addr)
 {
     addrreg = addr;
-}
-
-static void
-icsp_rewind(void)
-{
-    uint32_t insn;
-
-    /*
-     * lui t0, DMSEG
-     * ori t0, 0x0200
-     */
-    insn = 0x3C080000;
-    insn |= 0xFF20; /* DMSEG */
-    icsp_xfer_insn(insn);
-    insn = 0x35080000;
-    insn |= 0x0200;
-    icsp_xfer_insn(insn);
-
-    /*
-     * jr t0
-     * nop
-     */
-    insn = 0x01000008;
-    icsp_xfer_insn(insn);
-    insn = 0x00000000;
-    icsp_xfer_insn(insn);
-
-    return;
 }
 
 static uint32_t

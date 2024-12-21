@@ -7,9 +7,10 @@ CFLAGS=-Os -mmcu=${MCU} -Wall -DF_CPU=9216000L
 SRCS=main.c
 OBJS=${SRCS:%.c=%.o}
 
-TOOLDIR=/usr/cross
-# for Fedora 31 with avr-gcc package
-#TOOLDIR=/usr
+# for NetBSD, tune this
+#TOOLDIR=/usr/cross
+# for Fedora Linux with avr-gcc packages
+TOOLDIR=/usr
 
 CC=${TOOLDIR}/bin/avr-gcc
 OBJDUMP=${TOOLDIR}/bin/avr-objdump
@@ -54,4 +55,4 @@ fuse-attiny2313:
 		-U hfuse:w:0xDF:m \
 		-U lfuse:w:0x6F:m \
 
-main.o: main.c tty.c pin.c icsp.c cmddef.h tapdef.h
+main.o: main.c tty.c pin.c icsp_low.c icsp_high.c cmddef.h tapdef.h

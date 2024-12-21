@@ -5,7 +5,7 @@
 #define		CMD_VERSION		1
 
 /*
- * low-level control commands
+ * physical control commands
  */
 #define		CMD_DATA_LOW		16
 #define		CMD_DATA_HIGH		17
@@ -20,10 +20,14 @@
 #define		CMD_RESET_INPUT		26
 
 /*
- * high-level control commands
+ * ICSP entry/exit control commands
  */
 #define		CMD_ICSP_ENTER		32
 #define		CMD_ICSP_LEAVE		33
+
+/*
+ * EJTAG control commands
+ */
 #define		CMD_TAP_IDLE		40
 #define		CMD_TAP_COMMAND		41
 #define		CMD_XFER_BYTE		42
