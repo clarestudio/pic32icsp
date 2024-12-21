@@ -11,7 +11,6 @@
 #include "pin.c"
 #include "icsp_low.c"
 #include "icsp_high.c"
-#include "icsp.c"
 
 int main(void)
 {
